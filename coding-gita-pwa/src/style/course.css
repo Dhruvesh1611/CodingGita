@@ -1,0 +1,19 @@
+/* Course Button */
+.course-btn {
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #e0e7ff 0%, #6366f1 100%);
+  color: #4f46e5;
+  border: none;
+  border-radius: 8px;
+  margin-top: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+}
+
+.course-btn:hover {
+  background: linear-gradient(90deg, #6366f1 0%, #4f46e5 100%);
+  color: #fff;
+}
