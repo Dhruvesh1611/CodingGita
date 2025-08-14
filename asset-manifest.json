@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/coding-gita-pwa/static/css/main.048dba39.css",
+    "main.js": "/coding-gita-pwa/static/js/main.99ea6ecf.js",
+    "static/js/453.bdd30a07.chunk.js": "/coding-gita-pwa/static/js/453.bdd30a07.chunk.js",
+    "index.html": "/coding-gita-pwa/index.html",
+    "main.048dba39.css.map": "/coding-gita-pwa/static/css/main.048dba39.css.map",
+    "main.99ea6ecf.js.map": "/coding-gita-pwa/static/js/main.99ea6ecf.js.map",
+    "453.bdd30a07.chunk.js.map": "/coding-gita-pwa/static/js/453.bdd30a07.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.048dba39.css",
+    "static/js/main.99ea6ecf.js"
+  ]
+}
