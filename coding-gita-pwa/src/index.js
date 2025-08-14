@@ -1,14 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client'; // Import createRoot
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// New React 18 rendering API
+const container = document.getElementById('root');
+const root = createRoot(container); // Create a root.
+root.render(<App />); // Initial render
 
 serviceWorkerRegistration.register({
   onUpdate: registration => {
     if (window.confirm('New version available! Load new version?')) {
-      registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+      if (registration.waiting) {
+        registration.waiting.postMessage({ type: 'SKIP_WAITING' });
+      }
       window.location.reload();
     }
   },
