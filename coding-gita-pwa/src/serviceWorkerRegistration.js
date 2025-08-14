@@ -1,36 +1,36 @@
 // src/serviceWorkerRegistration.js
-export function register() {
+
+export function register(config) {
   if ('serviceWorker' in navigator) {
+    const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+
     window.addEventListener('load', () => {
       navigator.serviceWorker
-        .register('/custom-service-worker.js')
+        .register(swUrl)
         .then(registration => {
-          console.log('SW registered:', registration);
-
-          // Listen for updates
           registration.onupdatefound = () => {
-            const newWorker = registration.installing;
-            if (newWorker) {
-              newWorker.onstatechange = () => {
-                if (newWorker.state === 'activated' && navigator.serviceWorker.controller) {
-                  console.log('New version detected — reloading...');
-                  window.location.reload();
+            const installingWorker = registration.installing;
+            if (installingWorker == null) return;
+            installingWorker.onstatechange = () => {
+              if (installingWorker.state === 'installed') {
+                if (navigator.serviceWorker.controller) {
+                  if (config && config.onUpdate) config.onUpdate(registration);
+                } else {
+                  if (config && config.onSuccess) config.onSuccess(registration);
                 }
-              };
-            }
+              }
+            };
           };
         })
-        .catch(error => {
-          console.error('SW registration failed:', error);
-        });
+        .catch(error => console.error('SW registration failed:', error));
     });
   }
 }
 
 export function unregister() {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready.then(registration => {
-      registration.unregister();
-    });
+    navigator.serviceWorker.ready
+      .then(registration => registration.unregister())
+      .catch(error => console.error(error.message));
   }
 }
