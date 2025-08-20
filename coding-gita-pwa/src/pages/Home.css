@@ -1,0 +1,91 @@
+.mobile-page-container {
+  padding: 1rem;
+  font-family: sans-serif;
+}
+
+/* Daily Progress */
+.daily-progress-section {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.progress-circle {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+.progress-message {
+  margin-top: 0.5rem;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Quote */
+.quote-section {
+  background: #f9f9ff;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.quote-section blockquote {
+  font-style: italic;
+  color: #444;
+}
+.quote-author {
+  margin-top: 0.5rem;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Today’s Class */
+.today-class-section {
+  margin-bottom: 1.5rem;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.schedule-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #6366f1;
+  background: transparent;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: #6366f1;
+  font-size: 13px;
+}
+.class-status-card {
+  background: #f3f4f6;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Quick Access */
+.quick-access-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.card svg {
+  font-size: 20px;
+  color: #6366f1;
+}

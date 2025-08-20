@@ -160,12 +160,12 @@ function AppLayout({ children, darkMode, setDarkMode, sidebarOpen, setSidebarOpe
       {/* Bottom Navigation */}
       <nav className="bottom-nav">
         <Link to="/" className={`nav-item ${activePage === "home" ? "active" : ""}`}>
-          <i className="fas fa-book"></i>
-          <span>Study</span>
+          <i className="fas fa-layer-group"></i>
+          <span>Dashboard</span>
         </Link>
         <Link to="/courses" className={`nav-item ${activePage === "courses" ? "active" : ""}`}>
-          <i className="fas fa-layer-group"></i>
-          <span>Batches</span>
+          <i className=" fas fa-book"></i>
+          <span>Study</span>
         </Link>
         <Link to="/progress" className={`nav-item ${activePage === "progress" ? "active" : ""}`}>
           <i className="fas fa-chart-line"></i>

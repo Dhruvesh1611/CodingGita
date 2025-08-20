@@ -1,13 +1,48 @@
-import React from 'react';
+import React from "react";
+import { FaCalendarAlt, FaBook, FaRedo, FaDownload, FaQuestionCircle } from "react-icons/fa";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import "./Home.css";
 
 function Home() {
+  // Example progress (can be dynamic later)
+  const dailyProgress = 65; 
+
   return (
     <div className="mobile-page-container">
+      
+      {/* ===== Daily Progress Section ===== */}
+      <section className="daily-progress-section">
+        <h2>Daily Progress</h2>
+        <div className="progress-circle">
+          <CircularProgressbar
+            value={dailyProgress}
+            text={`${dailyProgress}%`}
+            styles={buildStyles({
+              pathColor: "#6366f1",
+              textColor: "#111",
+              trailColor: "#eee",
+              strokeLinecap: "round",
+            })}
+          />
+        </div>
+        <p className="progress-message">You completed {dailyProgress}% of today’s tasks 🎯</p>
+      </section>
+
+      {/* ===== Quote Section ===== */}
+      <section className="quote-section">
+        <blockquote>
+          "Consistency beats talent — keep coding daily 🚀"
+        </blockquote>
+        <p className="quote-author">– CodingGita</p>
+      </section>
+
+      {/* ===== Today’s Class Section ===== */}
       <section className="today-class-section">
         <div className="section-header">
           <h2>Today's Class</h2>
           <button className="schedule-btn">
-            <i className="far fa-calendar-alt"></i>
+            <FaCalendarAlt />
             <span>Weekly Schedule</span>
           </button>
         </div>
@@ -16,50 +51,16 @@ function Home() {
           <h3>Classes not Scheduled yet!</h3>
           <p>No classes have been scheduled yet. You can see your upcoming class as soon as it gets scheduled.</p>
         </div>
-        
-        <button className="view-all-btn">
-          <span>View All Classes</span>
-          <i className="fas fa-chevron-right"></i>
-        </button>
       </section>
-      
-      <section className="quick-access-grid">
-        <div className="quick-access-item">
-          <div className="icon-container">
-            <i className="fas fa-book"></i>
-          </div>
-          <span>My Batches</span>
-        </div>
-        
-        <div className="quick-access-item">
-          <div className="icon-container">
-            <i className="fas fa-history"></i>
-          </div>
-          <span>Recent Learning</span>
-        </div>
-        
-        <div className="quick-access-item">
-          <div className="icon-container">
-            <i className="fas fa-download"></i>
-          </div>
-          <span>My Downloads</span>
-        </div>
-        
-        <div className="quick-access-item">
-          <div className="icon-container">
-            <i className="fas fa-question-circle"></i>
-          </div>
-          <span>My Doubts</span>
-        </div>
+
+      {/* ===== Quick Access Cards ===== */}
+      <section className="quick-access-section">
+        <div className="card"><FaBook /> <span>My Batches</span></div>
+        <div className="card"><FaRedo /> <span>Recent Learning</span></div>
+        <div className="card"><FaDownload /> <span>My Downloads</span></div>
+        <div className="card"><FaQuestionCircle /> <span>My Doubts</span></div>
       </section>
-      
-      <section className="motivational-quote">
-        <p>From Code to Career — Achieve Full-Stack Mastery & Secure Your Future with CodingGita</p>
-        <div className="quote-source">
-          <i className="fas fa-heart"></i>
-          <span>From CodingGita</span>   
-        </div>
-      </section>
+
     </div>
   );
 }
